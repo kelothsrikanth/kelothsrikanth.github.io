@@ -13,6 +13,7 @@ const validateUser = async () => {
       <p onclick='showData(3)'><i class="bi bi-journal-album"></i> My Albums</p>
       <p onclick='showData(4)'><i class="bi bi-person"></i> My Profile</p>
       <p onclick='showData(6)'><i class="bi bi-check-circle-fill"></i></i> Todos</p>
+      <p onclick='showData(7)'><i class="bi bi-check-circle-fill"></i></i> Employees</p>
       <p onclick='showData(5)'><i class="bi bi-door-open"></i> Logout</p>
       `;
   divMenu.innerHTML = str;
@@ -40,6 +41,10 @@ const showData = async (pageId) => {
     
   }
    else if (pageId === 5) {
+    location.reload();
+  }
+
+  else if (pageId === 7) {
     location.reload();
   }
 };
@@ -125,6 +130,19 @@ const getPhotos = async (albumId) => {
 };
 
 const getProfile = async () => {
+  const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+  const json = await fetchData(url);
+  let str = "<div><h2>My Profile</h2>";
+  str += `<p><b>Name:</b>${json.name}</p>
+        <p><b>Email:</b>${json.email}</p>
+        <p><b>Phone:</b>${json.phone}</p>
+        <p><b>Address:</b>${json.address.suite},${json.address.street},${json.address.city}</p>
+ `;
+  str += "</div";
+  return str;
+};
+
+const getEmployees = async () => {
   const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
   const json = await fetchData(url);
   let str = "<div><h2>My Profile</h2>";
