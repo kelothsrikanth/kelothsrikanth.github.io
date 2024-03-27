@@ -40,11 +40,12 @@ const showData = async (pageId) => {
     divContent.innerHTML = await getTodos();
     
   }
-   else if (pageId === 5) {
-    location.reload();
-  }
 
-  else if (pageId === 7) {
+     else if (pageId === 7) {
+    divContent.innerHTML = await getEmployees();
+    
+  }
+   else if (pageId === 5) {
     location.reload();
   }
 };
