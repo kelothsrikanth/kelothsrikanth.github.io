@@ -85,24 +85,24 @@ if(element.completed ==true) {
   return str;
 };
 
-const getEmployees = async () => {
-  const url = `https://jsonplaceholder.typicode.com/todos/?userId=${userId}`;
-  const json = await fetchData(url);
-  let str = "<div><h2>Employees</h2>";
-  json.map((element) => {
-if(element.completed ==true) {
-  str+=`
-  <P><input type="checkbox" checked>${element.title}</P>`;
-}else {
-  str+=`
-  <P><input type="checkbox">${element.title}</P>`;
-}
+// const getEmployees = async () => {
+//   const url = `https://jsonplaceholder.typicode.com/todos/?userId=${userId}`;
+//   const json = await fetchData(url);
+//   let str = "<div><h2>Employees</h2>";
+//   json.map((element) => {
+// if(element.completed ==true) {
+//   str+=`
+//   <P><input type="checkbox" checked>${element.title}</P>`;
+// }else {
+//   str+=`
+//   <P><input type="checkbox">${element.title}</P>`;
+// }
     
 
-  });
-  str += "</div";
-  return str;
-};
+//   });
+//   str += "</div";
+//   return str;
+// };
 
 const getPosts = async () => {
   const url = `https://jsonplaceholder.typicode.com/posts/?userId=${userId}`;
